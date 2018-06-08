@@ -19,9 +19,9 @@ package(){
 
     cd ${srcdir}/${pkgname}-${pkgver}
 
-    install -d -m 0755 ${pkgdir}/usr/share/${pkgname}
-    install -p -m 0644 audio-injector-functions.sh ${pkgdir}/usr/share/${pkgname}
-    install -p -m 0644 README.md ${pkgdir}/usr/share/${pkgname}
+    install -d -m 0755 ${pkgdir}/usr/share/audio-injector
+    install -p -m 0644 audio-injector-functions.sh ${pkgdir}/usr/share/audio-injector
+    install -p -m 0644 README.md ${pkgdir}/usr/share/audio-injector
 
     install -d -m 0755 ${pkgdir}/usr/bin
     install -p -m 0755 ainjectorctl.sh ${pkgdir}/usr/bin/ainjectorctl
