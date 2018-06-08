@@ -1,3 +1,5 @@
-# ainjectorctl - Arch Linux package
+# Tools for Audio Injector Stereo Sound Card - Arch Linux package
 
-See [here](//github.com/RoEdAl/ainjectorctl) for more info.
+## Tools
+
+* Mixer tool: [ainjectorctl](//github.com/RoEdAl/ainjectorctl).

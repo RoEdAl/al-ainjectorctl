@@ -1,7 +1,7 @@
 # Maintainer: Edmunt Pienkowsky <roed@onet.eu>
 
-pkgname='ainjectorctl'
-pkgdesc='ainjectorctl - mixer tool for Audio Injector Stereo Sound Card for Raspberry Pi'
+pkgname='audio-injector-utils'
+pkgdesc='Tools for Audio Injector Stereo Sound Card'
 url='http://github.com/RoEdAl/ainjectorctl'
 pkgver='1.0'
 pkgrel='1'
@@ -10,14 +10,14 @@ license=('GPL')
 depends=('alsa-utils')
 
 source=(
-    "${pkgname}-v${pkgver}.tar.gz::http://github.com/RoEdAl/ainjectorctl/archive/v${pkgver}.tar.gz"
+    "ainjectorctl-v${pkgver}.tar.gz::http://github.com/RoEdAl/ainjectorctl/archive/v${pkgver}.tar.gz"
 )
 
 md5sums=('ad6f5cfe1774350c4accc61703a50268')
 
 package(){
 
-    cd ${srcdir}/${pkgname}-${pkgver}
+    cd ${srcdir}/ainjectorctl-${pkgver}
 
     install -d -m 0755 ${pkgdir}/usr/share/audio-injector
     install -p -m 0644 audio-injector-functions.sh ${pkgdir}/usr/share/audio-injector
