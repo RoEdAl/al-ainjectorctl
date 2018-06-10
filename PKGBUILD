@@ -2,9 +2,9 @@
 
 pkgname='audio-injector-utils'
 pkgdesc='Tools for Audio Injector Stereo Sound Card'
-url='http://github.com/RoEdAl/ainjectorctl'
+url="http://github.com/RoEdAl/${pkgname}"
 pkgver='2.0'
-pkgrel='1'
+pkgrel='2'
 arch=('any')
 license=('GPL')
 depends=('alsa-utils')
