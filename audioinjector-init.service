@@ -1,0 +1,22 @@
+[Unit]
+Description=Initialization of Audio Injector soundcard
+ConditionFileNotEmpty=/sys/devices/platform/soc/soc:sound/sound/card0/id
+After=sound.target
+After=sys-devices-platform-soc-soc:sound-sound-card0.device
+
+[Service]
+ExecStartPre=/usr/bin/audioinjectorchk
+ExecStartPre=/usr/bin/audioinjectorctl playback line
+ExecStart=/usr/bin/speaker-test -D hw:audioinjectorpi -F S32_LE -c 2 -r 48000 -t sine -l 4
+User=nobody
+Group=audio
+Nice=19
+CPUSchedulingPolicy=idle
+CPUQuota=5%
+PrivateNetwork=yes
+ProtectSystem=full
+NoNewPrivileges=yes
+TasksMax=4
+
+[Install]
+WantedBy=multi-user.target

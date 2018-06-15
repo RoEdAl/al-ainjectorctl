@@ -3,8 +3,8 @@
 pkgname='audio-injector-utils'
 pkgdesc='Tools for Audio Injector Stereo Sound Card'
 url="http://github.com/RoEdAl/${pkgname}"
-pkgver='2.0'
-pkgrel='2'
+pkgver='3.0'
+pkgrel='1'
 arch=('any')
 license=('GPL')
 depends=('alsa-utils')
@@ -12,9 +12,11 @@ optdepends=('ffmpeg: required by ainjectortest' 'bc: required by ainjectortest')
 
 source=(
     "${pkgname}-v${pkgver}.tar.gz::http://github.com/RoEdAl/${pkgname}/archive/v${pkgver}.tar.gz"
+    'audioinjector-init.service'
 )
 
-md5sums=('50bc29eb9d098bb379a343d9987cbbba')
+md5sums=('2d60b2f3b1000ffbe1b42ba0da3bc2c5'
+         'd41ecbc2760963207a08208d4018949a')
 
 package(){
     cd ${srcdir}/${pkgname}-${pkgver}
@@ -27,4 +29,9 @@ package(){
     ln -s 'ainjectorctl' ${pkgdir}/usr/bin/audioinjectorctl
     install -p -m 0755 ainjectortest/ainjectortest.sh ${pkgdir}/usr/bin/ainjectortest
     ln -s 'ainjectortest' ${pkgdir}/usr/bin/audioinjectortest
+    install -p -m 0755 ainjectorchk/ainjectorchk.sh ${pkgdir}/usr/bin/ainjectorchk
+    ln -s 'ainjectorchk' ${pkgdir}/usr/bin/audioinjectorchk
+
+    install -d -m 0755 ${pkgdir}/usr/lib/systemd/system
+    install -p -m 0644 ${srcdir}/audioinjector-init.service ${pkgdir}/usr/lib/systemd/system
 }
