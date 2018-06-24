@@ -3,7 +3,7 @@
 pkgname='audio-injector-utils'
 pkgdesc='Tools for Audio Injector Stereo Sound Card'
 url="http://github.com/RoEdAl/${pkgname}"
-pkgver='3.0'
+pkgver='3.1'
 pkgrel='1'
 arch=('any')
 license=('GPL')
@@ -15,7 +15,7 @@ source=(
     'audioinjector-init.service'
 )
 
-md5sums=('2d60b2f3b1000ffbe1b42ba0da3bc2c5'
+md5sums=('523808983d0aaa580f828eb5bbe680aa'
          'd41ecbc2760963207a08208d4018949a')
 
 package(){
