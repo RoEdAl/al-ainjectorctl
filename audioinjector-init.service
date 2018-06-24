@@ -1,8 +1,6 @@
 [Unit]
 Description=Initialization of Audio Injector soundcard
-ConditionFileNotEmpty=/sys/devices/platform/soc/soc:sound/sound/card0/id
 After=sound.target
-After=sys-devices-platform-soc-soc:sound-sound-card0.device
 
 [Service]
 ExecStartPre=/usr/bin/audioinjectorchk
